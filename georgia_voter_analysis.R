@@ -40,3 +40,46 @@ ggplot(analysis, aes(x = voter_age_group, y = count, fill = voter_registration_s
   geom_col(position = "dodge") +
   theme_minimal() +
   labs(title = "Voter Analysis in Georgia", x = "Age Group", y = "Number of Voters")
+
+# Create Map to Plot Voters Across State 
+# Install the packages if not already installed
+if (!requireNamespace("sf", quietly = TRUE))
+    install.packages("sf")
+if (!requireNamespace("ggplot2", quietly = TRUE))
+    install.packages("ggplot2")
+if (!requireNamespace("tidyverse", quietly = TRUE))
+    install.packages("tidyverse")
+
+# Load the packages
+library(sf)
+library(ggplot2)
+
+# Example data frame structure
+data <- data.frame(
+  County = c("Fulton", "Cobb", "DeKalb"),
+  Latitude = c(33.7900, 33.8990, 33.7950),
+  Longitude = c(-84.5000, -84.5640, -84.2270),
+  Voters = c(1000, 800, 1200)
+)
+
+# If coordinates are not available, you might need to join with a spatial data frame that contains this info
+# For this example, let's assume we have latitude and longitude
+
+# Convert data frame to an sf object
+data_sf <- st_as_sf(data, coords = c("Longitude", "Latitude"), crs = 4326)
+
+# Install and load USAboundaries if you don't have it
+if (!requireNamespace("USAboundaries", quietly = TRUE))
+    install.packages("USAboundaries")
+
+library(USAboundaries)
+# Get Georgia state boundaries
+ga_map <- us_states(resolution = "low", states = "GA")
+
+# Base map
+ggplot() +
+  geom_sf(data = ga_map, fill = "white", color = "black") +
+  geom_sf(data = data_sf, aes(size = voters), color = "blue", alpha = 0.6) +
+  labs(title = "Map of Voters Across Georgia", x = "Longitude", y = "Latitude") +
+  theme_minimal() +
+  scale_size(range = c(1, 10))  # Adjust the size scale based on your data
