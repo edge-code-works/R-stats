@@ -26,3 +26,6 @@ voter_data <- files[grepl("\\.csv$", files)]
 df <- voter_data %>%
   read_sv_arrow()%>%
   clean_names()
+
+colnames(df)
+
