@@ -1,4 +1,4 @@
-### Political Repo Highlights
+### Repo Highlights
 
 ## Description: 
 Hi! My name is Jessie Edge! I am a dynamic data scientist with more than eight years of experience in leading key stakeholders in making data-driven decisions. I initially found a passion in data science while interning on Capitol Hill in Washington, D.C. for a U.S. Senator. I was tasked during my internship to develop and maintain an Amendment tracker for the legislative team to track over 570 Amendments proposed to The National Defense Authorization Act of 2016. Pretty cool? I thought so, when returning for my final year in undergrad I volunteered on a state court judge campaign and a few other races in the local Augusta area and have had a passion for data and politics ever since! Leading to my current role as the managing director of a political data firm. This repo is to provide a way for me to show off some really cool things I can produce without sharing to much information within my current role due to data privacy & agreements.  
@@ -13,7 +13,7 @@ public is an open-source segment of a larger, proprietary suite of data analysis
 List all libraries, tools, or frameworks that need to be installed before running the project.
 
 ## Installation
-Git clone https://github.com/jessie-edge-rstats/public.git
+Git clone https://github.com/edge-code-works/R-stats.git
 
 ## Features
 List the features of the project that are publicly visible. Explain the functionality without giving away any implementation details that are proprietary.
