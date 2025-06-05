@@ -9,7 +9,7 @@ library(rayvertex)
 options(tigris_use_cache = TRUE)
 
 # Set your Census API key
-census_api_key(key = "86354f7678ae69569d718ddb256d462026059373", install = TRUE, overwrite = TRUE)
+census_api_key(key = "", install = TRUE, overwrite = TRUE)
 
 # Example: Median household income in a county
 income <- get_acs(
